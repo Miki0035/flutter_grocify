@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grocify/core/themes/theme.dart';
+import 'package:grocify/features/auth/presentation/screens/login_screen.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -11,10 +12,7 @@ class MyApp extends StatelessWidget {
       darkTheme: GrocifyTheme.dark,
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(title: Text('Welcome Grocify')),
-        body: Center(child: Text('Grocify')),
-      ),
+      home: LoginScreen(),
     );
   }
 }
