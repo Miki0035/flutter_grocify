@@ -96,9 +96,14 @@ class LoginScreen extends StatelessWidget {
                             GLoginButton(
                               buttonText: 'Continue with Google',
                               icon: GImages.google,
-                              onTap: () => MaterialPageRoute(
-                                builder: (context) => BottomNav(),
-                              ),
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => BottomNav(),
+                                  ),
+                                );
+                              },
                             ),
 
                             SizedBox(height: 16.0),
