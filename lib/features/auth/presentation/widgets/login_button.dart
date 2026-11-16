@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:grocify/core/constants/colors.dart';
 
 class GLoginButton extends StatelessWidget {
-  const GLoginButton({super.key, this.onTap, required this.buttonText});
+  const GLoginButton({
+    super.key,
+    this.onTap,
+    required this.buttonText,
+    required this.icon,
+  });
   final String buttonText;
+  final String icon;
   final VoidCallback? onTap;
   @override
   Widget build(BuildContext context) {
@@ -23,7 +29,19 @@ class GLoginButton extends StatelessWidget {
             SizedBox(
               child: Row(
                 children: [
-                  Icon(Icons.import_contacts_outlined),
+                  Container(
+                    padding: .all(8),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: .circular(50),
+                    ),
+                    child: Image.asset(
+                      icon,
+                      width: 20,
+                      height: 20,
+                      fit: .cover,
+                    ),
+                  ),
                   SizedBox(width: 8),
                   Text(
                     buttonText,

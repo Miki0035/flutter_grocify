@@ -13,41 +13,47 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: GrocifyBrand.green,
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Column(
+        child: Column(
+          children: [
+            Padding(
+              padding: .all(24),
+              child: Column(
                 children: [
                   Text(
                     'Grocify',
                     textAlign: .center,
                     style: TextStyle(fontSize: 32),
                   ),
-                  Text(
-                    'Plan smarter. Shope happier.',
-                    textAlign: .center,
-                    style: TextStyle(fontSize: 16),
-                  ),
+                  Text('Plan smarter. Shope happier.', textAlign: .center),
 
+                  SizedBox(height: 12),
                   Container(
-                    width: 320,
-                    height: 200,
-                    padding: .all(8),
+                    width: 420,
+                    height: 280,
+                    padding: .all(10),
                     decoration: BoxDecoration(
-                      border: Border.all(color: GrocifyBrand.greenSoft),
-                      borderRadius: .circular(15),
+                      color: GrocifyLightColors.background.withValues(
+                        alpha: 0.1,
+                      ),
+                      border: Border.all(
+                        color: GrocifyBrand.greenSoft.withValues(alpha: 0.3),
+                      ),
+                      borderRadius: .circular(20),
                     ),
                     child: Image.asset(GImages.loginBanner, fit: .contain),
                   ),
                 ],
               ),
+            ),
 
-              ClipRRect(
+            Expanded(
+              child: ClipRRect(
                 borderRadius: .only(
                   topLeft: .circular(40),
                   topRight: .circular(40),
                 ),
                 child: Container(
+                  width: .infinity,
                   decoration: BoxDecoration(
                     color: GrocifyDarkColors.background,
                   ),
@@ -86,9 +92,15 @@ class LoginScreen extends StatelessWidget {
                         padding: .symmetric(vertical: 8),
                         child: Column(
                           children: [
-                            GLoginButton(buttonText: 'Continue with Google'),
+                            GLoginButton(
+                              buttonText: 'Continue with Google',
+                              icon: GImages.google,
+                            ),
                             SizedBox(height: 16.0),
-                            GLoginButton(buttonText: 'Continue with Github'),
+                            GLoginButton(
+                              buttonText: 'Continue with Github',
+                              icon: GImages.github,
+                            ),
                           ],
                         ),
                       ),
@@ -96,14 +108,14 @@ class LoginScreen extends StatelessWidget {
                       SizedBox(height: 12),
                       Text(
                         'By continuing, you agree to our Terms and Privacy Policy.',
-                        style: TextStyle(fontSize: 14),
+                        style: TextStyle(fontSize: 12),
                       ),
                     ],
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
