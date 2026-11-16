@@ -14,6 +14,10 @@ class GrocifyTheme {
       error: GrocifyLightColors.error,
       onSurface: GrocifyLightColors.textPrimary,
     ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      selectedItemColor: GrocifyBrand.greenLight,
+      unselectedItemColor: GrocifyLightColors.background,
+    ),
   );
 
   static ThemeData dark = ThemeData(
@@ -27,6 +31,10 @@ class GrocifyTheme {
       surface: GrocifyDarkColors.surface,
       error: GrocifyDarkColors.error,
       onSurface: GrocifyDarkColors.textPrimary,
+    ),
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      selectedItemColor: GrocifyBrand.greenLight,
+      unselectedItemColor: GrocifyLightColors.background,
     ),
   );
 }
