@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grocify/core/constants/colors.dart';
+import 'package:grocify/core/themes/custom_themes/bottom_navigation_bar_theme.dart';
 
 class GrocifyTheme {
   static ThemeData light = ThemeData(
@@ -14,6 +15,8 @@ class GrocifyTheme {
       error: GrocifyLightColors.error,
       onSurface: GrocifyLightColors.textPrimary,
     ),
+    bottomNavigationBarTheme:
+        GBottomNavigationBarTheme.lightBottomNavigationBarTheme,
   );
 
   static ThemeData dark = ThemeData(
@@ -28,5 +31,7 @@ class GrocifyTheme {
       error: GrocifyDarkColors.error,
       onSurface: GrocifyDarkColors.textPrimary,
     ),
+    bottomNavigationBarTheme:
+        GBottomNavigationBarTheme.darkBottomNavigationBarTheme,
   );
 }

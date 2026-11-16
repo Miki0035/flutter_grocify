@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widget_previews.dart';
+import 'package:grocify/core/common/widgets/bottom_nav.dart';
 import 'package:grocify/core/constants/colors.dart';
 import 'package:grocify/core/constants/images.dart';
 import 'package:grocify/features/auth/presentation/widgets/login_button.dart';
@@ -95,7 +96,16 @@ class LoginScreen extends StatelessWidget {
                             GLoginButton(
                               buttonText: 'Continue with Google',
                               icon: GImages.google,
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => BottomNav(),
+                                  ),
+                                );
+                              },
                             ),
+
                             SizedBox(height: 16.0),
                             GLoginButton(
                               buttonText: 'Continue with Github',
