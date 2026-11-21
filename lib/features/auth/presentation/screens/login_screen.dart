@@ -21,11 +21,14 @@ class LoginScreen extends StatelessWidget {
               child: Column(
                 children: [
                   Text(
-                    'Grocify',
+                    'Grocify App',
                     textAlign: .center,
                     style: TextStyle(fontSize: 32),
                   ),
-                  Text('Plan smarter. Shope happier.', textAlign: .center),
+                  Text(
+                    'Plan smarter. Shope happier than ever before.',
+                    textAlign: .center,
+                  ),
 
                   SizedBox(height: 12),
                   Container(
