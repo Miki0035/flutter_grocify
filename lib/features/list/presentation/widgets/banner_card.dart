@@ -1,32 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widget_previews.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:grocify/core/constants/colors.dart';
 
 class GBannerCard extends StatelessWidget {
+  @Preview()
   const GBannerCard({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: .infinity,
-      padding: .all(8),
+      padding: .all(14),
       decoration: BoxDecoration(
         color: GrocifyBrand.green,
-        borderRadius: .circular(12),
+        borderRadius: .circular(14),
       ),
       child: Column(
         crossAxisAlignment: .start,
         children: [
           Text(
             'TODAY',
-            style: TextStyle(fontWeight: .w100, color: GrocifyBrand.white),
+            style: GoogleFonts.comfortaa(
+              fontWeight: .w100,
+              color: GrocifyBrand.white,
+            ),
           ),
 
           Text(
             'Your Grocery Board',
-            style: TextStyle(
-              fontWeight: .w600,
-              fontSize: 24,
-              color: GrocifyBrand.white,
+            style: GoogleFonts.comfortaa(
+              textStyle: TextStyle(
+                fontWeight: .w800,
+                fontSize: 24,
+                color: GrocifyBrand.white,
+              ),
             ),
           ),
           Text.rich(
@@ -48,6 +56,7 @@ class GBannerCard extends StatelessWidget {
               value: 50,
               color: GrocifyBrand.white,
               borderRadius: .circular(50),
+              minHeight: 10,
               backgroundColor: GrocifyBrand.greenSoft,
             ),
           ),

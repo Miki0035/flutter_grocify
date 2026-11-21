@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:grocify/core/constants/colors.dart';
 import 'package:grocify/core/themes/custom_themes/bottom_navigation_bar_theme.dart';
 
@@ -6,6 +7,7 @@ class GrocifyTheme {
   static ThemeData light = ThemeData(
     useMaterial3: true,
     brightness: Brightness.light,
+    textTheme: GoogleFonts.poppinsTextTheme(),
     scaffoldBackgroundColor: GrocifyLightColors.background,
     colorScheme: const ColorScheme.light(
       primary: GrocifyLightColors.primary,
@@ -22,6 +24,7 @@ class GrocifyTheme {
   static ThemeData dark = ThemeData(
     useMaterial3: true,
     brightness: Brightness.dark,
+    textTheme: GoogleFonts.poppinsTextTheme(),
     scaffoldBackgroundColor: GrocifyDarkColors.background,
     colorScheme: const ColorScheme.dark(
       primary: GrocifyDarkColors.primary,
