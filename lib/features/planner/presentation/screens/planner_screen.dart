@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grocify/core/constants/colors.dart';
+import 'package:grocify/core/constants/sizes.dart';
+import 'package:grocify/features/planner/presentation/widgets/activity_card.dart';
 
 class PlannerScreen extends StatelessWidget {
   const PlannerScreen({super.key});
@@ -12,7 +14,7 @@ class PlannerScreen extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              padding: .symmetric(vertical: 8, horizontal: 14),
+              padding: .all(24),
               decoration: BoxDecoration(
                 border: .all(color: GrocifyBrand.greenDark),
                 color: GrocifyBrand.white,
@@ -45,7 +47,7 @@ class PlannerScreen extends StatelessWidget {
                               'quantities,and priority in one place',
                               style: TextStyle(
                                 fontSize: 12,
-                                color: GrocifyBrand.greenDark,
+                                color: Colors.black.withValues(alpha: 0.8),
                               ),
                             ),
                           ],
@@ -76,40 +78,52 @@ class PlannerScreen extends StatelessWidget {
 
                   // CARD COTNAINER
                   Row(
-                    mainAxisAlignment: .spaceEvenly,
+                    mainAxisAlignment: .spaceBetween,
                     crossAxisAlignment: .center,
                     children: [
-                      Expanded(
-                        child: Container(
-                          padding: .all(12),
-                          decoration: BoxDecoration(
-                            border: .all(color: GrocifyBrand.green),
-                            borderRadius: .circular(18),
-                          ),
-                          child: Column(
-                            crossAxisAlignment: .start,
-                            children: [
-                              Text(
-                                'PENDING',
-                                style: TextStyle(
-                                  fontWeight: .w100,
-                                  letterSpacing: 0.5,
-                                ),
-                              ),
-                              Text(
-                                '6',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: .w600,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
+                      GActivityCard(type: 'PENDING', amount: 5),
+                      SizedBox(width: 8),
+                      GActivityCard(type: 'HIGH PRIORITY', amount: 3),
+                      SizedBox(width: 8),
+
+                      GActivityCard(type: 'UNITS', amount: 25),
                     ],
                   ),
                 ],
+              ),
+            ),
+
+            // IMAGE CONTAINER
+            Text('BUILD YOUR LIST', style: TextStyle(fontSize: GSize.fontMd)),
+            Text(
+              'Add Items with the right quality, category and urgency.',
+              style: TextStyle(fontSize: GSize.fontSm),
+            ),
+
+            Form(
+              child: Container(
+                padding: .all(14),
+                decoration: BoxDecoration(
+                  border: .all(color: GrocifyBrand.green),
+                ),
+                child: Column(
+                  children: [
+                    TextFormField(
+                      decoration: InputDecoration(
+                        labelText: "Item name",
+                        hintText: 'Ex: Blueberries',
+                        hintStyle: TextStyle(fontWeight: .w200),
+                        prefixIconColor: Colors.grey,
+                        prefixIcon: Icon(Icons.shopping_bag_outlined, size: 18),
+                        border: OutlineInputBorder(
+                          borderRadius: .circular(18),
+                          borderSide: BorderSide(color: GrocifyBrand.green),
+                        ),
+                        fillColor: GrocifyBrand.greenSoft,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           ],

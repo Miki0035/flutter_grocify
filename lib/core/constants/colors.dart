@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 /// Grocify brand colors shared across themes.
 abstract final class GrocifyBrand {
-  static const Color green = Color(0xFF019746);
+  static const Color green = Color(0xFF248A49);
   static const Color greenDark = Color(0xFF0DD667);
   static const Color greenLight = Color(0xFF70DB92);
   static const Color greenSoft = Color(0xFFD3F7E4);
