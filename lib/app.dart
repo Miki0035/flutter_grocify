@@ -9,8 +9,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: GrocifyTheme.light,
-      darkTheme: GrocifyTheme.dark,
-      themeMode: ThemeMode.system,
+      // darkTheme: GrocifyTheme.dark,
+      // themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
       home: LoginScreen(),
     );

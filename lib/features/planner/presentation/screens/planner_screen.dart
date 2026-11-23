@@ -10,14 +10,13 @@ class PlannerScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: .symmetric(horizontal: 14, vertical: 24),
+        padding: .all(24),
         child: Column(
           children: [
             Container(
               padding: .all(24),
               decoration: BoxDecoration(
-                border: .all(color: GrocifyBrand.greenDark),
-                color: GrocifyBrand.white,
+                color: Theme.of(context).colorScheme.surface,
                 borderRadius: .circular(18),
               ),
               child: Column(
@@ -94,33 +93,46 @@ class PlannerScreen extends StatelessWidget {
             ),
 
             // IMAGE CONTAINER
-            Text('BUILD YOUR LIST', style: TextStyle(fontSize: GSize.fontMd)),
-            Text(
-              'Add Items with the right quality, category and urgency.',
-              style: TextStyle(fontSize: GSize.fontSm),
+            SizedBox(height: 16),
+
+            Row(
+              children: [
+                Column(
+                  crossAxisAlignment: .start,
+                  children: [
+                    Text(
+                      'BUILD YOUR LIST',
+                      style: TextStyle(fontSize: GSize.fontMd),
+                    ),
+                    Text(
+                      'Add Items with the right quality, category and urgency.',
+                      style: TextStyle(fontSize: GSize.fontSm),
+                    ),
+                  ],
+                ),
+              ],
             ),
+
+            SizedBox(height: 16),
 
             Form(
               child: Container(
-                padding: .all(14),
+                padding: .symmetric(horizontal: 14, vertical: 20),
                 decoration: BoxDecoration(
                   border: .all(color: GrocifyBrand.green),
+                  borderRadius: .circular(18),
                 ),
                 child: Column(
                   children: [
-                    TextFormField(
-                      decoration: InputDecoration(
-                        labelText: "Item name",
-                        hintText: 'Ex: Blueberries',
-                        hintStyle: TextStyle(fontWeight: .w200),
-                        prefixIconColor: Colors.grey,
-                        prefixIcon: Icon(Icons.shopping_bag_outlined, size: 18),
-                        border: OutlineInputBorder(
-                          borderRadius: .circular(18),
-                          borderSide: BorderSide(color: GrocifyBrand.green),
-                        ),
-                        fillColor: GrocifyBrand.greenSoft,
-                      ),
+                    GTextFormField(
+                      labelText: 'Item name',
+                      hintText: 'Ex: Blueberries',
+                      prefixIcon: Icons.shopping_bag,
+                    ),
+                    GTextFormField(
+                      labelText: 'Quantity',
+                      hintText: '1',
+                      prefixIcon: Icons.numbers_outlined,
                     ),
                   ],
                 ),
@@ -128,6 +140,55 @@ class PlannerScreen extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+}
+
+class GTextFormField extends StatelessWidget {
+  const GTextFormField({
+    super.key,
+    required this.labelText,
+    required this.hintText,
+    required this.prefixIcon,
+  });
+
+  final String labelText;
+  final String hintText;
+  final IconData prefixIcon;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: .symmetric(vertical: 12),
+      child: Column(
+        crossAxisAlignment: .start,
+        children: [
+          Text(
+            labelText,
+            style: TextStyle(
+              fontWeight: .w500,
+              fontSize: GSize.fontMd,
+              color: Colors.black,
+            ),
+          ),
+          SizedBox(height: 8),
+          TextFormField(
+            decoration: InputDecoration(
+              // labelText: labelText,
+              hintText: hintText,
+              hintStyle: TextStyle(fontWeight: .w200, color: Colors.grey),
+              prefixIconColor: Colors.grey,
+              prefixIcon: Icon(prefixIcon, size: 18),
+              border: OutlineInputBorder(
+                borderRadius: .circular(18),
+                borderSide: BorderSide(color: GrocifyBrand.green),
+              ),
+              filled: true,
+              fillColor: GrocifyBrand.greenSoft,
+            ),
+          ),
+        ],
       ),
     );
   }

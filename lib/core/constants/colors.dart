@@ -49,33 +49,43 @@ abstract final class GrocifyDarkColors {
 abstract final class GrocifyLightColors {
   // Backgrounds
   static const Color background = Color(0xFFFFFFFF);
-  static const Color surface = Color(0xFFF4FBF5);
+  // static const Color surface = Color(0xFFF4FBF5);
+  static const Color surface = Color(0xFFFFFFFF);
   static const Color card = Color(0xFFEEF8F1);
   static const Color elevated = Color(0xFFE6F9EE);
+  static const Color black = Color(0xFF000000);
 
   // Primary
-  static const Color primary = Color(0xFF019746);
-  static const Color primaryLight = Color(0xFF3BAC71);
-  static const Color primaryDark = Color(0xFF08783C);
-  static const Color primaryContainer = Color(0xFFD3F7E4);
-
-  // Text
-  static const Color textPrimary = Color(0xFF10251A);
-  static const Color textSecondary = Color(0xFF64776A);
-  static const Color textDisabled = Color(0xFFA8B8AC);
+  static const Color primary = Color(0xFF248A49);
+  static const Color primaryLight = Color(0xFF18B355);
 
   // Borders and dividers
   static const Color border = Color(0xFFD3E9D9);
   static const Color divider = Color(0xFFE4F2E9);
 
-  // Semantic colors
-  static const Color success = Color(0xFF15934E);
-  static const Color error = Color(0xFFE54848);
-  static const Color warning = Color(0xFFD99527);
-  static const Color info = Color(0xFF2685D5);
+  // progress indicators
+  static const Color progressBlue = Color(0xFF7AA8F8);
+  static const Color progressGreen = Color(0xFF57B87D);
+  static const Color progressPink = Color(0xFFE68BA5);
+  static const Color progressPurple = Color(0xFFA97CE8);
+  static const Color progressAmber = Color(0xFFE8A66C);
 
-  // Components
-  static const Color inputBackground = Color(0xFFEEF8F1);
-  static const Color buttonText = Color(0xFFFFFFFF);
-  static const Color bottomNavigation = Color(0xFFF4FBF5);
+  // static const Color primaryDark = Color(0xFF08783C);
+  // static const Color primaryContainer = Color(0xFFD3F7E4);
+
+  // // Text
+  // static const Color textPrimary = Color(0xFF10251A);
+  // static const Color textSecondary = Color(0xFF64776A);
+  // static const Color textDisabled = Color(0xFFA8B8AC);
+
+  // // Semantic colors
+  // static const Color success = Color(0xFF15934E);
+  // static const Color error = Color(0xFFE54848);
+  // static const Color warning = Color(0xFFD99527);
+  // static const Color info = Color(0xFF2685D5);
+
+  // // Components
+  // static const Color inputBackground = Color(0xFFEEF8F1);
+  // static const Color buttonText = Color(0xFFFFFFFF);
+  // static const Color bottomNavigation = Color(0xFFF4FBF5);
 }

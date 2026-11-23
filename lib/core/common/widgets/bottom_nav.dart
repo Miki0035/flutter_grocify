@@ -27,14 +27,21 @@ class _BottomNavState extends State<BottomNav> {
           _currentPageIndex = value;
         }),
         destinations: [
-          NavigationDestination(icon: Icon(Icons.list), label: "List"),
+          NavigationDestination(
+            icon: Icon(Icons.list_alt_outlined),
+            label: "List",
+
+            selectedIcon: Icon(Icons.list_alt_rounded),
+          ),
           NavigationDestination(
             icon: Icon(Icons.add_circle_outline),
+            selectedIcon: Icon(Icons.add_circle),
             label: "Planner",
           ),
 
           NavigationDestination(
-            icon: Icon(Icons.bar_chart_rounded),
+            icon: Icon(Icons.bar_chart_outlined),
+            selectedIcon: Icon(Icons.bar_chart_rounded),
             label: "Insight",
           ),
         ],

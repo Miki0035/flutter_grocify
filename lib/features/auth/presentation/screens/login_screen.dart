@@ -11,8 +11,13 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final scaffoldBgColor = Theme.of(context).colorScheme.primary;
+    final lowerSectionBgColor = Theme.of(context).colorScheme.surface;
+    final onPrimaryTextColor = Theme.of(context).colorScheme.onPrimary;
+    final onSurfaceTextColor = Theme.of(context).colorScheme.onSurface;
+
     return Scaffold(
-      backgroundColor: GrocifyBrand.green,
+      backgroundColor: scaffoldBgColor,
       body: SafeArea(
         child: Column(
           children: [
@@ -23,11 +28,12 @@ class LoginScreen extends StatelessWidget {
                   Text(
                     'Grocify App',
                     textAlign: .center,
-                    style: TextStyle(fontSize: 32),
+                    style: TextStyle(fontSize: 32, color: onPrimaryTextColor),
                   ),
                   Text(
                     'Plan smarter. Shope happier than ever before.',
                     textAlign: .center,
+                    style: TextStyle(color: onPrimaryTextColor),
                   ),
 
                   SizedBox(height: 12),
@@ -36,9 +42,6 @@ class LoginScreen extends StatelessWidget {
                     height: 280,
                     padding: .all(10),
                     decoration: BoxDecoration(
-                      color: GrocifyLightColors.background.withValues(
-                        alpha: 0.1,
-                      ),
                       border: Border.all(
                         color: GrocifyBrand.greenSoft.withValues(alpha: 0.3),
                       ),
@@ -58,9 +61,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 child: Container(
                   width: .infinity,
-                  decoration: BoxDecoration(
-                    color: GrocifyDarkColors.background,
-                  ),
+                  decoration: BoxDecoration(color: lowerSectionBgColor),
                   padding: const EdgeInsets.symmetric(
                     horizontal: 24,
                     vertical: 12,
@@ -78,7 +79,10 @@ class LoginScreen extends StatelessWidget {
                           ),
                           child: Text(
                             'Welcome Back'.toUpperCase(),
-                            style: TextStyle(fontSize: 12),
+                            style: TextStyle(
+                              fontSize: 12,
+                              color: onSurfaceTextColor,
+                            ),
                           ),
                         ),
                       ),
@@ -121,7 +125,10 @@ class LoginScreen extends StatelessWidget {
                       SizedBox(height: 12),
                       Text(
                         'By continuing, you agree to our Terms and Privacy Policy.',
-                        style: TextStyle(fontSize: 12),
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: onSurfaceTextColor,
+                        ),
                       ),
                     ],
                   ),

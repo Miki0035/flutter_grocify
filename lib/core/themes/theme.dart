@@ -11,14 +11,14 @@ class GrocifyTheme {
     scaffoldBackgroundColor: GrocifyLightColors.background,
     colorScheme: const ColorScheme.light(
       primary: GrocifyLightColors.primary,
-      onPrimary: GrocifyLightColors.buttonText,
-      secondary: GrocifyLightColors.primaryLight,
+      onPrimary: GrocifyLightColors.surface,
+      // secondary: GrocifyLightColors.primaryLight,
       surface: GrocifyLightColors.surface,
-      error: GrocifyLightColors.error,
-      onSurface: GrocifyLightColors.textPrimary,
+      // error: GrocifyLightColors.error,
+      onSurface: GrocifyLightColors.black,
+      outlineVariant: GrocifyLightColors.border,
     ),
-    bottomNavigationBarTheme:
-        GBottomNavigationBarTheme.lightBottomNavigationBarTheme,
+    navigationBarTheme: GBottomNavigationBarTheme.lightBottomNavigationBarTheme,
   );
 
   static ThemeData dark = ThemeData(
