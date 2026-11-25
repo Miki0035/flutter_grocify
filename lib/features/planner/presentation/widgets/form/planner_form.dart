@@ -43,7 +43,26 @@ class _GPlanFormState extends State<GPlanForm> {
     ),
   ];
 
-  var selectedCategory = categories[0];
+  static const List<CategoryOptionItem> priorities = [
+    CategoryOptionItem(
+      value: 'Low',
+      icon: Icons.low_priority_outlined,
+      selectedIcon: Icons.low_priority_rounded,
+    ),
+    CategoryOptionItem(
+      value: 'Medium',
+      icon: Icons.drag_handle_outlined,
+      selectedIcon: Icons.drag_handle_rounded,
+    ),
+    CategoryOptionItem(
+      value: 'High',
+      icon: Icons.priority_high_outlined,
+      selectedIcon: Icons.priority_high_rounded,
+    ),
+  ];
+
+  CategoryOptionItem selectedCategory = categories[0];
+  CategoryOptionItem selectedPriority = priorities[0];
 
   @override
   void dispose() {
@@ -54,6 +73,10 @@ class _GPlanFormState extends State<GPlanForm> {
 
   @override
   Widget build(BuildContext context) {
+    // Width Of Device
+    final width = MediaQuery.sizeOf(context).width;
+
+    // SCREEN COLORS
     final backgroundColor = Theme.of(context).colorScheme.surface;
     final borderColor = Theme.of(context).colorScheme.outlineVariant;
     // CHIP BG COLOR
@@ -117,8 +140,8 @@ class _GPlanFormState extends State<GPlanForm> {
                     ),
                     SizedBox(height: 8),
                     Wrap(
-                      spacing: 5,
-                      runSpacing: 5,
+                      spacing: 7,
+                      runSpacing: 7,
                       children: categories.map((item) {
                         final selected = selectedCategory.value == item.value;
                         final icon = selected ? item.selectedIcon : item.icon;
@@ -170,6 +193,103 @@ class _GPlanFormState extends State<GPlanForm> {
                       }).toList(),
                     ),
                   ],
+                ),
+              ),
+            ),
+
+            // PRIORITY
+            Padding(
+              padding: .symmetric(vertical: 12),
+              child: SizedBox(
+                width: .infinity,
+                child: Column(
+                  crossAxisAlignment: .start,
+                  children: [
+                    Text(
+                      'Priority',
+                      style: TextStyle(
+                        fontWeight: .w700,
+                        fontSize: GSize.fontSm,
+                        color: Colors.black,
+                      ),
+                    ),
+                    SizedBox(height: 8),
+                    Wrap(
+                      spacing: 7,
+                      runSpacing: 7,
+                      children: priorities.map((item) {
+                        final selected = selectedPriority.value == item.value;
+                        final icon = selected ? item.selectedIcon : item.icon;
+                        final chipBg = selected
+                            ? selectedChipBgColor
+                            : defaultChipBgColor;
+
+                        final iconColor = selected
+                            ? selectedIconColor
+                            : defaultIconColor;
+
+                        final textColor = selected
+                            ? selectedTextColor
+                            : defaultTextColor;
+
+                        final option = item.value;
+
+                        return ChoiceChip(
+                          backgroundColor: defaultChipBgColor,
+                          selectedColor: chipBg,
+                          side: .none,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: .circular(20),
+                          ),
+
+                          onSelected: (value) {
+                            setState(() {
+                              selectedPriority = item;
+                            });
+                          },
+
+                          label: Row(
+                            mainAxisSize: .min,
+                            children: [
+                              Icon(icon, color: iconColor),
+                              SizedBox(width: 4),
+                              Text(
+                                option,
+                                style: TextStyle(
+                                  color: textColor,
+                                  fontWeight: .w600,
+                                ),
+                              ),
+                            ],
+                          ),
+                          selected: selected,
+                          showCheckmark: false,
+                        );
+                      }).toList(),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
+            Container(
+              width: width * 0.8,
+              padding: .symmetric(vertical: 24),
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: selectedChipBgColor,
+                  padding: .symmetric(vertical: 22),
+                  shape: RoundedRectangleBorder(borderRadius: .circular(8)),
+                ),
+                child: Text(
+                  'Create',
+                  style: TextStyle(
+                    color: selectedTextColor,
+                    fontWeight: .w600,
+                    fontSize: GSize.fontMd,
+                    letterSpacing: 0.9,
+                  ),
                 ),
               ),
             ),
