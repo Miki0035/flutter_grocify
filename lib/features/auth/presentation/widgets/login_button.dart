@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:grocify/core/constants/colors.dart';
 
 class GLoginButton extends StatelessWidget {
   const GLoginButton({
@@ -13,14 +12,19 @@ class GLoginButton extends StatelessWidget {
   final VoidCallback? onTap;
   @override
   Widget build(BuildContext context) {
+    final iconColor = Theme.of(context).colorScheme.primary;
+    final backgroundColor = Theme.of(context).colorScheme.surface;
+    final textColor = Theme.of(context).colorScheme.onSurface;
+    final borderColor = Theme.of(context).colorScheme.outlineVariant;
+
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: .symmetric(vertical: 12, horizontal: 8),
+        padding: .symmetric(vertical: 10, horizontal: 8),
         decoration: BoxDecoration(
           borderRadius: .circular(15),
-          border: .all(color: GrocifyBrand.greenSoft, width: 0.2),
-          color: GrocifyDarkColors.background,
+          border: .all(color: borderColor, width: 2),
+          color: backgroundColor,
         ),
         child: Row(
           mainAxisAlignment: .spaceBetween,
@@ -45,13 +49,13 @@ class GLoginButton extends StatelessWidget {
                   SizedBox(width: 8),
                   Text(
                     buttonText,
-                    style: TextStyle(color: GrocifyBrand.white, fontSize: 16),
+                    style: TextStyle(color: textColor, fontSize: 16),
                   ),
                 ],
               ),
             ),
 
-            Icon(Icons.chevron_right, color: GrocifyBrand.greenSoft),
+            Icon(Icons.chevron_right, color: iconColor),
           ],
         ),
       ),

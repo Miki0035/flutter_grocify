@@ -11,10 +11,10 @@ class GBannerCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: .infinity,
-      padding: .all(14),
+      padding: .symmetric(horizontal: 14, vertical: 22),
       decoration: BoxDecoration(
         color: GrocifyBrand.green,
-        borderRadius: .circular(14),
+        borderRadius: .circular(18),
       ),
       child: Column(
         crossAxisAlignment: .start,
@@ -27,16 +27,21 @@ class GBannerCard extends StatelessWidget {
             ),
           ),
 
+          SizedBox(height: 8),
+
           Text(
             'Your Grocery Board',
             style: GoogleFonts.comfortaa(
               textStyle: TextStyle(
-                fontWeight: .w800,
-                fontSize: 24,
+                fontWeight: .w900,
+                fontSize: 28,
                 color: GrocifyBrand.white,
               ),
             ),
           ),
+
+          SizedBox(height: 8),
+
           Text.rich(
             TextSpan(
               style: TextStyle(

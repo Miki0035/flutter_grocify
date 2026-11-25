@@ -9,7 +9,7 @@ class GChip extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: .symmetric(vertical: 4, horizontal: 12),
+      padding: .symmetric(vertical: 4, horizontal: 14),
       decoration: BoxDecoration(
         borderRadius: .circular(10),
         color: backgroundColor,

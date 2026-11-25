@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widget_previews.dart';
 import 'package:grocify/core/constants/colors.dart';
-import 'package:grocify/features/list/presentation/widgets/add_remove_button.dart';
 import 'package:grocify/features/list/presentation/widgets/banner_card.dart';
-import 'package:grocify/features/list/presentation/widgets/chip.dart';
 import 'package:grocify/features/list/presentation/widgets/item_card.dart';
 
 class ListScreen extends StatelessWidget {
