@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:grocify/core/constants/colors.dart';
 
 class GLoginButton extends StatelessWidget {
   const GLoginButton({
@@ -24,7 +23,7 @@ class GLoginButton extends StatelessWidget {
         padding: .symmetric(vertical: 10, horizontal: 8),
         decoration: BoxDecoration(
           borderRadius: .circular(15),
-          border: .all(color: borderColor, width: 0.2),
+          border: .all(color: borderColor, width: 2),
           color: backgroundColor,
         ),
         child: Row(

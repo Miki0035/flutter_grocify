@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grocify/core/constants/colors.dart';
+import 'package:grocify/core/constants/sizes.dart';
 import 'package:grocify/features/list/presentation/widgets/add_remove_button.dart';
 import 'package:grocify/features/list/presentation/widgets/chip.dart';
 
@@ -8,12 +9,16 @@ class GItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final borderColor = Theme.of(context).colorScheme.outlineVariant;
+    final backgroundColor = Theme.of(context).colorScheme.surface;
+    final chipTextColor = Theme.of(context).colorScheme.primary;
+
     return Container(
-      padding: .symmetric(vertical: 18, horizontal: 10),
+      padding: .symmetric(vertical: 18, horizontal: 14),
       decoration: BoxDecoration(
-        color: GrocifyBrand.white,
-        border: .all(color: GrocifyBrand.green),
-        borderRadius: .circular(15),
+        color: backgroundColor,
+        border: .all(color: borderColor, width: 2),
+        borderRadius: .circular(20),
       ),
       child: Row(
         mainAxisAlignment: .spaceBetween,
@@ -24,12 +29,12 @@ class GItemCard extends StatelessWidget {
             crossAxisAlignment: .start,
             children: [
               Container(
-                width: 20,
-                height: 20,
+                width: 25,
+                height: 25,
                 decoration: BoxDecoration(
                   borderRadius: .circular(50),
                   color: GrocifyBrand.white,
-                  border: .all(color: GrocifyBrand.greenLight),
+                  border: .all(color: borderColor, width: 2),
                 ),
               ),
 
@@ -41,21 +46,21 @@ class GItemCard extends StatelessWidget {
                   Text(
                     'Eggs',
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: GSize.fontMd,
                       color: Colors.black,
                       fontWeight: .w600,
                     ),
                   ),
-                  SizedBox(height: 8),
+                  SizedBox(height: 10),
                   GChip(
-                    backgroundColor: Colors.green.shade100,
+                    backgroundColor: borderColor.withValues(alpha: 0.5),
                     child: Text(
                       "Diary",
                       style: TextStyle(
-                        color: Colors.black87,
+                        color: chipTextColor,
 
-                        fontSize: 10,
-                        fontWeight: .w600,
+                        fontSize: 12,
+                        fontWeight: .w700,
                       ),
                     ),
                   ),
@@ -83,7 +88,7 @@ class GItemCard extends StatelessWidget {
             ],
           ),
 
-          // LEFT DELETE + PRIORITY
+          // LEFT PRIORITY + DELETE
           Row(
             children: [
               GChip(
