@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:grocify/core/constants/colors.dart';
 import 'package:grocify/core/constants/sizes.dart';
 import 'package:grocify/features/planner/presentation/widgets/form/planner_form.dart';
 import 'package:grocify/features/planner/presentation/widgets/planner_banner.dart';

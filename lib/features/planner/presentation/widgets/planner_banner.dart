@@ -73,14 +73,12 @@ class GPlannerBanner extends StatelessWidget {
           SizedBox(height: 12),
 
           // CARD COTNAINER
-          Row(
-            mainAxisAlignment: .spaceBetween,
+          Wrap(
+            spacing: 24,
             crossAxisAlignment: .center,
             children: [
               GActivityCard(type: 'PENDING', amount: 5),
-              SizedBox(width: 8),
               GActivityCard(type: 'HIGH PRIORITY', amount: 3),
-              SizedBox(width: 8),
 
               GActivityCard(type: 'UNITS', amount: 25),
             ],
