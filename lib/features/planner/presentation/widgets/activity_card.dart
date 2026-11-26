@@ -59,7 +59,7 @@ class GActivityCard extends StatelessWidget {
               style: TextStyle(
                 color: typeFontColor ?? textColor,
                 fontWeight: .w700,
-                fontSize: GSize.fontSm,
+                fontSize: GSize.fontXs,
                 letterSpacing: typeLetterSpacing,
               ),
             ),

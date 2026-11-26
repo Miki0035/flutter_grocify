@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:grocify/core/constants/sizes.dart';
-import 'package:grocify/features/list/presentation/widgets/chip.dart';
+import 'package:grocify/core/common/widgets/chip.dart';
 
 class GInsightPriorityCard extends StatelessWidget {
   const GInsightPriorityCard({
@@ -63,7 +63,7 @@ class GInsightPriorityCard extends StatelessWidget {
               "ACTION",
               style: TextStyle(
                 color: Colors.red,
-                fontSize: GSize.fontSm,
+                fontSize: GSize.fontXs,
                 fontWeight: .w800,
               ),
             ),

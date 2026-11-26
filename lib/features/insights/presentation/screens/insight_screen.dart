@@ -30,7 +30,7 @@ class InsightScreen extends StatelessWidget {
           decoration: BoxDecoration(color: backgroundColor),
           child: Column(
             children: [
-              GInsightBanner(),
+              GInsightUserInfo(),
               SizedBox(height: 24),
 
               GInsightStats(),

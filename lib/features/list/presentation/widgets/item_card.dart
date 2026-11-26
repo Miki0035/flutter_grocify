@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:grocify/core/constants/colors.dart';
 import 'package:grocify/core/constants/sizes.dart';
 import 'package:grocify/features/list/presentation/widgets/add_remove_button.dart';
-import 'package:grocify/features/list/presentation/widgets/chip.dart';
+import 'package:grocify/core/common/widgets/chip.dart';
 
 class GItemCard extends StatelessWidget {
   const GItemCard({super.key});
@@ -90,6 +90,7 @@ class GItemCard extends StatelessWidget {
 
           // LEFT PRIORITY + DELETE
           Row(
+            crossAxisAlignment: .start,
             children: [
               GChip(
                 backgroundColor: Colors.red.shade50,
@@ -97,7 +98,7 @@ class GItemCard extends StatelessWidget {
                   "HIGH",
                   style: TextStyle(
                     color: Colors.red,
-                    fontSize: 14,
+                    fontSize: GSize.fontXs,
                     fontWeight: .w600,
                   ),
                 ),
@@ -107,7 +108,6 @@ class GItemCard extends StatelessWidget {
 
               IconButton(
                 iconSize: 18,
-                constraints: BoxConstraints(minWidth: 18),
                 style: IconButton.styleFrom(
                   backgroundColor: Colors.red.shade50,
                   padding: .symmetric(vertical: 4, horizontal: 8),

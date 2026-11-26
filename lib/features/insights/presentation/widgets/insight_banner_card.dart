@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:grocify/core/constants/sizes.dart';
 
-class GInsightBanner extends StatelessWidget {
-  const GInsightBanner({super.key});
+class GInsightUserInfo extends StatelessWidget {
+  const GInsightUserInfo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +52,7 @@ class GInsightBanner extends StatelessWidget {
                     'SIGNED IN AS',
                     style: TextStyle(
                       letterSpacing: 1.1,
+                      fontSize: GSize.fontXs,
                       color: textColor.withValues(alpha: 0.7),
                     ),
                   ),
@@ -64,6 +65,7 @@ class GInsightBanner extends StatelessWidget {
                     'testemail@gmail.com',
                     style: TextStyle(
                       fontWeight: .w600,
+                      fontSize: GSize.fontXs,
                       color: textColor.withValues(alpha: 0.7),
                     ),
                   ),
